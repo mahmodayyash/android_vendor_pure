@@ -1,4 +1,5 @@
-# Copyright (C) 2017 The Pure Nexus Project
+#
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,20 +12,22 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
+
+# Sample: This is where we'd set a backup provider if we had one
+# $(call inherit-product, device/sample/products/backup_overlay.mk)
 
 # Include pure telephony configuration
 include vendor/pure/configs/pure_phone.mk
 
-# Inherit AOSP device configuration for osprey
-$(call inherit-product, device/motorola/osprey/aosp_osprey.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Set those variables here to overwrite the inherited values.
-PRODUCT_DEVICE := osprey
-PRODUCT_NAME := osprey
-PRODUCT_BRAND := Motorola
-PRODUCT_MANUFACTURER := Motorola
-PRODUCT_RELEASE_NAME := osprey
+# Inherit from otus device
+$(call inherit-product, device/motorola/otus/aosp_otus.mk)
 
-# OTA Pure Nexus
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.ota.manifest=https://raw.githubusercontent.com/PureNexusProject-Mod/OTA_server/master/osprey.json
+PRODUCT_NAME := otus
+PRODUCT_DEVICE := otus
+PRODUCT_BRAND := motorola
+PRODUCT_MODEL := Moto E
+PRODUCT_MANUFACTURER := motorola

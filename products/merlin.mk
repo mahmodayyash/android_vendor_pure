@@ -15,16 +15,16 @@
 # Include pure telephony configuration
 include vendor/pure/configs/pure_phone.mk
 
-# Inherit AOSP device configuration for osprey
-$(call inherit-product, device/motorola/osprey/aosp_osprey.mk)
+# Inherit AOSP device configuration for merlin
+$(call inherit-product, device/motorola/merlin/aosp_merlin.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_DEVICE := osprey
-PRODUCT_NAME := osprey
+PRODUCT_DEVICE := merlin
+PRODUCT_NAME := merlin
 PRODUCT_BRAND := Motorola
 PRODUCT_MANUFACTURER := Motorola
-PRODUCT_RELEASE_NAME := osprey
+PRODUCT_RELEASE_NAME := merlin
 
 # OTA Pure Nexus
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.ota.manifest=https://raw.githubusercontent.com/PureNexusProject-Mod/OTA_server/master/osprey.json
+ro.ota.manifest=https://raw.githubusercontent.com/PureNexusProject-Mod/OTA_server/master/merlin.json

@@ -1,4 +1,3 @@
-# Copyright (C) 2017 The Pure Nexus Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,12 +16,14 @@ IS_ARM64 := true
 # Include pure telephony configuration
 include vendor/pure/configs/pure_phone.mk
 
-# Inherit AOSP device configuration for A6020
-$(call inherit-product, device/lenovo/A6020/aosp_A6020.mk)
+# Inherit AOSP device configuration for oneplus3
+$(call inherit-product, device/oneplus/oneplus3/aosp_oneplus3.mk)
 
-# Set those variables here to overwrite the inherited values.
-PRODUCT_DEVICE := A6020
-PRODUCT_NAME := A6020
-PRODUCT_BRAND := Lenovo
-PRODUCT_MODEL := Vibe K5
-PRODUCT_MANUFACTURER := Lenovo
+PRODUCT_NAME := oneplus3
+PRODUCT_DEVICE := oneplus3
+PRODUCT_MANUFACTURER := OnePlus
+PRODUCT_BRAND := OnePlus
+
+PRODUCT_GMS_CLIENTID_BASE := android-oneplus
+
+TARGET_VENDOR := oneplus
