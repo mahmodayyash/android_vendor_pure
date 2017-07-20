@@ -14,6 +14,10 @@
 
 IS_ARM64 := true
 
+# Screen
+TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_LENGTH := 1920
+
 $(call inherit-product, device/wileyfox/kipper/aosp_kipper.mk)
 
 # Include pure telephony configuration
